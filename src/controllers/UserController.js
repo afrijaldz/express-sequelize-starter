@@ -2,7 +2,7 @@ const UserService = require('../services/UserService')
 
 exports.all = async (req, res, next) => {
   try {
-    const users = await UserService.all()
+    const users = await UserService.getAll()
     req.data = users
     next()
     

@@ -1,6 +1,6 @@
 const UserModel = require('../../models').User
 const bcrypt = require('bcrypt')
-const saltRounds = process.env.SALT
+const saltRounds = parseInt(process.env.SALT)
 
 exports.getAll = async () => {
   try {
@@ -22,15 +22,17 @@ exports.getById = async (id) => {
   }
 }
 
-exports.create = async data => {
+exports.create = data => {
   try {
-    console.log(data)
-    bcrypt.hash('okee', saltRounds, function (err, hash) {
-      console.log(hash)
+    bcrypt.hash(data.password, saltRounds, async (err, hash) => {
+      if (!err) {
+        data.password = hash
+        const user = await UserModel.create(data)
+        return user
+      } else {
+        throw err
+      }
     });
-
-    // const user = await UserModel.create(data)
-    // return user
   } catch (error) {
     throw error
   }
