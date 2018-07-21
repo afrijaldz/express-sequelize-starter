@@ -4,7 +4,8 @@
   "description": "express starter with sequlize orm",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/nodemon app.js"
   },
   "keywords": [
     "nodejs",
@@ -19,6 +20,7 @@
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "mysql2": "^1.5.3",
     "sequelize": "^4.38.0",
     "sequelize-cli": "^4.0.0"
   },
@@ -27,6 +29,7 @@
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^7.0.1",
+    "nodemon": "latest",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0"
   }
