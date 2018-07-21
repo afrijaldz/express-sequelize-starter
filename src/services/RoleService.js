@@ -1,6 +1,6 @@
 const RoleModel = require('../../models').Role
 
-exports.getAllRoles = async () => {
+exports.getAll = async () => {
   try {
     const roles = await RoleModel.findAll()
     return roles
@@ -20,7 +20,7 @@ exports.create = async data => {
   }
 }
 
-exports.getRoleById = async id => {
+exports.getById = async id => {
   try {
     const role = await RoleModel.findById(id)
     return role
