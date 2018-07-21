@@ -14,6 +14,8 @@ exports.all = async (req, res, next) => {
 
 exports.store = async (req, res, next) => {
   const data = req.body
+  console.log(data)
+
   try {
     const user = await UserService.create(data)
     req.data = user

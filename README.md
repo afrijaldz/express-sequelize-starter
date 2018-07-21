@@ -18,4 +18,4 @@ Repository to make new nodejs project using express, sequelize orm and jwt authe
 
 - Run development
 
-  `npm run dev`
+  `npm start`
