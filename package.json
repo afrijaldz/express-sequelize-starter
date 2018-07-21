@@ -1,0 +1,33 @@
+{
+  "name": "express-sequelize-starter",
+  "version": "1.0.0",
+  "description": "express starter with sequlize orm",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "node",
+    "express",
+    "sequlize",
+    "mysql"
+  ],
+  "author": "Afrijal Dzuhri",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0"
+  }
+}
