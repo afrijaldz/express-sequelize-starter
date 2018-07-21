@@ -18,8 +18,12 @@ app.use(routes(express))
 const PORT = process.env.PORT
 
 // run server
-models.sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(`server listen on port ${PORT}`)
+models.sequelize.sync()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`server listen on port ${PORT}`)
+    })  
   })
-})
+  .catch(err => {
+    console.error(err)
+  })

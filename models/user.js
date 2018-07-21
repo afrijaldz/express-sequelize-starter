@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     fullname: DataTypes.STRING
   }, {});
-
+  
   User.associate = function(models) {
     User.belongsTo(models.Role)
   };
