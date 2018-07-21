@@ -14,6 +14,8 @@ Repository to make new nodejs project using express, sequelize orm and jwt authe
 
 - Setting config file in config/config.json
 
+- Setting the `.env` file from `.env.example`
+
 - Run development
 
   `npm run dev`

@@ -5,6 +5,6 @@ const UserController = require('../controllers/UserController')
 const ResponseMiddleware = require('../middlewares/ResponseMiddleware')
 
 router.get('/', UserController.all, ResponseMiddleware)
-router.post('/', UserController.store)
+router.post('/', UserController.store, ResponseMiddleware)
 
 module.exports = router

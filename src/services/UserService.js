@@ -10,7 +10,7 @@ exports.all = async () => {
   }
 }
 
-exports.store = async data => {
+exports.create = async data => {
   try {
     const user = await UserModel.create(data)
     return user
