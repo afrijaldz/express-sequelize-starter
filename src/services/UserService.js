@@ -32,7 +32,7 @@ exports.create = data => {
       } else {
         throw err
       }
-    });
+    })
   } catch (error) {
     throw error
   }
@@ -40,7 +40,7 @@ exports.create = data => {
 
 exports.updateById = async (id, data) => {
   try {
-    const user = await UserModel.find({ where: { id } });
+    const user = await UserModel.find({ where: { id } })
     
     const obj = {}
     for (const key in data) {
