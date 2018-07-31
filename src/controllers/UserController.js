@@ -5,7 +5,6 @@ exports.all = async (req, res, next) => {
     const users = await UserService.getAll()
     req.data = users
     next()
-    
   } catch (error) {
     next(error)
   }
@@ -18,7 +17,6 @@ exports.show = async (req, res, next) => {
     const user = await UserService.getById(id)
     req.data = user
     next()
-    
   } catch (error) {
     next(error)
   }
@@ -44,7 +42,6 @@ exports.update = async (req, res, next) => {
     const user = await UserService.updateById(id, data)
     req.data = user
     next()
-
   } catch (error) {
     next(error)
   }
@@ -57,7 +54,6 @@ exports.destroy = async (req, res, next) => {
     const user = await UserService.removeById(id)
     req.data = user
     next()
-
   } catch (error) {
     next(error)
   }

@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt')
 const UserModel = require('../../models').User
-const { Op } = require('sequelize');
+const { Op } = require('sequelize')
 
 exports.login = async (username, password) => {
   try {
@@ -8,9 +8,9 @@ exports.login = async (username, password) => {
       where: {
         [Op.or]: [
           { email: username },
-          { username },
-        ],
-      },
+          { username }
+        ]
+      }
     })
 
     if (!user) {
@@ -20,12 +20,11 @@ exports.login = async (username, password) => {
 
     }
 
-    const match = await bcrypt.compare(password, user.passwordHash);
+    const match = await bcrypt.compare(password, user.passwordHash)
 
     if (match) {
-      //login
+      // login
     }
-    
   } catch (error) {
     throw error
   }

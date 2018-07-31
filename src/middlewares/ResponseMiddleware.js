@@ -1,6 +1,6 @@
 const _ = require('lodash')
 
-function ResponseMiddleware() {
+function ResponseMiddleware () {
   return (req, res) => {
     let data = []
 
