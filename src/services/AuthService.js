@@ -1,6 +1,5 @@
-const bcrypt = require('bcrypt')
-const UserModel = require('../../models').User
-const { Op } = require('sequelize')
+const UserModel = require('../../models').User;
+const { Op } = require('sequelize');
 
 exports.login = async (username, password) => {
   try {
@@ -11,21 +10,21 @@ exports.login = async (username, password) => {
           { username }
         ]
       }
-    })
+    });
 
     if (!user) {
-      const error = new Error('User not found')
-      throw error
+      const error = new Error('User not found');
+      throw error;
     } else {
 
     }
 
-    const match = await bcrypt.compare(password, user.passwordHash)
+    // const match = await bcrypt.compare(password, user.passwordHash);
 
-    if (match) {
-      // login
-    }
+    // if (match) {
+    //   // login
+    // }
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};

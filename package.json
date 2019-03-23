@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/nodemon app.js"
+    "dev": "./node_modules/.bin/nodemon app.js",
+    "start": "node app.js"
   },
   "keywords": [
     "nodejs",
@@ -17,22 +18,19 @@
   "author": "Afrijal Dzuhri",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^3.0.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "lodash": "^4.17.10",
     "mysql2": "^1.5.3",
-    "sequelize": "^4.38.0",
-    "sequelize-cli": "^4.0.0"
+    "sequelize": "^4.38.0"
   },
   "devDependencies": {
     "eslint": "^5.1.0",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "nodemon": "latest"
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "nodemon": "latest",
+    "sequelize-cli": "^5.4.0"
   }
 }
