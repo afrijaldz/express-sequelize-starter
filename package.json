@@ -1,6 +1,6 @@
 {
   "name": "express-sequelize-starter",
-  "version": "1.9.0",
+  "version": "1.0.1",
   "description": "express starter with sequlize orm",
   "main": "app.js",
   "scripts": {
