@@ -33,3 +33,9 @@ Repository to make new nodejs project using express, sequelize orm and jwt authe
   Install
   
   `sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++`
+
+# Contributing
+
+Feel free to contribute to this project
+
+# MIT
