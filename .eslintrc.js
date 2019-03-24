@@ -8,6 +8,7 @@ module.exports = {
     },
     "rules": {
         "no-console": "off",
-        "no-prototype-builtins": "off"
+        "no-prototype-builtins": "off",
+        "no-restricted-syntax": "off",
     },
 };

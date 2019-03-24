@@ -1,13 +1,14 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
 
-const RoleController = require('../controllers/RoleController')
-const ResponseMiddleware = require('../middlewares/ResponseMiddleware')
+const router = express.Router();
 
-router.get('/', RoleController.all, ResponseMiddleware)
-router.get('/:id', RoleController.show, ResponseMiddleware)
-router.post('/', RoleController.store, ResponseMiddleware)
-router.put('/:id', RoleController.update, ResponseMiddleware)
-router.delete('/:id', RoleController.destroy, ResponseMiddleware)
+const RoleController = require('../controllers/RoleController');
+const ResponseMiddleware = require('../middlewares/ResponseMiddleware');
 
-module.exports = router
+router.get('/', RoleController.all, ResponseMiddleware);
+router.get('/:id', RoleController.show, ResponseMiddleware);
+router.post('/', RoleController.store, ResponseMiddleware);
+router.put('/:id', RoleController.update, ResponseMiddleware);
+router.delete('/:id', RoleController.destroy, ResponseMiddleware);
+
+module.exports = router;

@@ -1,9 +1,11 @@
-module.exports = (express) => {
-  const router = express.Router()
+const userRoutes = require('./UserRoutes');
+const authRoutes = require('./AuthRoutes');
 
-  router.use('/users', require('./UserRoutes'))
-  router.use('/roles', require('./RoleRoutes'))
-  router.use('/auth', require('./AuthRoutes'))
-  
-  return router
-}
+module.exports = (express) => {
+  const router = express.Router();
+
+  router.use('/users', userRoutes);
+  router.use('/auth', authRoutes);
+
+  return router;
+};

@@ -1,13 +1,14 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
 
-const UserController = require('../controllers/UserController')
-const ResponseMiddleware = require('../middlewares/ResponseMiddleware')
+const router = express.Router();
 
-router.get('/', UserController.all, ResponseMiddleware)
-router.get('/:id', UserController.show, ResponseMiddleware)
-router.post('/', UserController.store, ResponseMiddleware)
-router.put('/:id', UserController.update, ResponseMiddleware)
-router.delete('/:id', UserController.destroy, ResponseMiddleware)
+const UserController = require('../controllers/UserController');
+const ResponseMiddleware = require('../middlewares/ResponseMiddleware');
 
-module.exports = router
+router.get('/', UserController.all, ResponseMiddleware);
+router.get('/:id', UserController.show, ResponseMiddleware);
+router.post('/', UserController.store, ResponseMiddleware);
+router.put('/:id', UserController.update, ResponseMiddleware);
+router.delete('/:id', UserController.destroy, ResponseMiddleware);
+
+module.exports = router;
