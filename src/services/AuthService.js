@@ -1,30 +1,25 @@
-const UserModel = require('../../models').User;
 const { Op } = require('sequelize');
+const hashpassword = require('../helpers/hashpassword');
 
-exports.login = async (username, password) => {
+const UserModel = require('../../models').User;
+
+exports.register = async ({
+  name,
+  password,
+  email,
+  phone,
+}) => {
   try {
-    const user = await UserModel.findOne({
-      where: {
-        [Op.or]: [
-          { email: username },
-          { username }
-        ]
-      }
+    const user = await UserModel.create({
+      name,
+      password: await hashpassword(password),
+      email,
+      phone,
     });
 
-    if (!user) {
-      const error = new Error('User not found');
-      throw error;
-    } else {
-
-    }
-
-    // const match = await bcrypt.compare(password, user.passwordHash);
-
-    // if (match) {
-    //   // login
-    // }
+    return user;
   } catch (error) {
+    console.log(error);
     throw error;
   }
 };
