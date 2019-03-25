@@ -1,4 +1,4 @@
-exports.response = (req, res) => {
+module.exports = (req, res) => {
   const { data } = req;
   const meta = req.meta ? req.meta : null;
   const status = 'OK';
