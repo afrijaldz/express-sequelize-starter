@@ -21,6 +21,9 @@ exports.register = async (req, res, next) => {
     next();
   } catch (error) {
     console.log(error);
-    next(error);
+    req.message = error;
+    req.status = 'ERROR';
+    next();
+    // next(error);
   }
 };
