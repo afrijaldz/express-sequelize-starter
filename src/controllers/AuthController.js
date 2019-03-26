@@ -37,9 +37,8 @@ exports.login = async (req, res, next) => {
 
     next();
   } catch (error) {
-    console.log(error);
     req.data = null;
-    req.message = error;
+    req.message = error.message;
     req.status = 'ERROR';
     next();
   }

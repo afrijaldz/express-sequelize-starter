@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const hashpassword = require('../helpers/hashpassword');
+const { hash, unhash } = require('../helpers/password');
 
 const UserModel = require('../../models').User;
 
@@ -12,7 +12,7 @@ exports.register = async ({
   try {
     const user = await UserModel.create({
       name,
-      password: await hashpassword(password),
+      password: await hash(password),
       email,
       phone,
     });
@@ -31,11 +31,21 @@ exports.login = async ({ email, password }) => {
       },
     });
 
-    const token = jwt.sign(user.toJSON(), process.env.JWT_KEY, {
-      expiresIn: '1d',
-    });
+    if (!user) {
+      throw new Error('User not found');
+    } else {
+      const result = await unhash(password, user.password);
 
-    return { user, token };
+      if (!result) {
+        throw new Error('password doesn\'t match');
+      } else {
+        const token = jwt.sign(user.toJSON(), process.env.JWT_KEY, {
+          expiresIn: '1d',
+        });
+
+        return { user, token };
+      }
+    }
   } catch (error) {
     throw error;
   }
