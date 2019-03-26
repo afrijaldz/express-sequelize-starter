@@ -1,4 +1,8 @@
 'use strict';
+
+const Hashids = require('hashids');
+const hashids = new Hashids();
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     name: DataTypes.STRING,
@@ -12,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 
   User.prototype.toJSON = function () {
     let user = Object.assign({}, this.get());
+    user.id = hashids.encode(user.id)
 
     delete user.password;
     return user;
