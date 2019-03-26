@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-const RoleModel = require('../../models').Role;
+const RoleModel = require('../../models').role;
 
 exports.getAll = async () => {
   try {
