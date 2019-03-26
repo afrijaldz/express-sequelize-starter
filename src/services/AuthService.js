@@ -1,4 +1,4 @@
-const { Op } = require('sequelize');
+const jwt = require('jsonwebtoken');
 const hashpassword = require('../helpers/hashpassword');
 
 const UserModel = require('../../models').User;
@@ -19,7 +19,24 @@ exports.register = async ({
 
     return user;
   } catch (error) {
-    console.log(error);
+    throw error;
+  }
+};
+
+exports.login = async ({ email, password }) => {
+  try {
+    const user = await UserModel.findOne({
+      where: {
+        email,
+      },
+    });
+
+    const token = jwt.sign(user.toJSON(), process.env.JWT_KEY, {
+      expiresIn: '1d',
+    });
+
+    return { user, token };
+  } catch (error) {
     throw error;
   }
 };
