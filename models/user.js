@@ -4,7 +4,7 @@ const Hashids = require('hashids');
 const hashids = new Hashids();
 
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define('User', {
+  const user = sequelize.define('user', {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     underscored: true,
   });
 
-  User.prototype.toJSON = function () {
+  user.prototype.toJSON = function () {
     let user = Object.assign({}, this.get());
     user.id = hashids.encode(user.id)
 
@@ -22,8 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     return user;
   }
 
-  User.associate = function(models) {
+  user.associate = function(models) {
     // associations can be defined here
+    user.belongsTo(models.role)
   };
-  return User;
+  return user;
 };

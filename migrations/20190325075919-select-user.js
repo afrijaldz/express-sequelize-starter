@@ -10,7 +10,7 @@ module.exports = {
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
 
-    return queryInterface.changeColumn('Users', 'email', {
+    return queryInterface.changeColumn('users', 'email', {
       type: Sequelize.STRING,
       unique: true,
     });
@@ -25,7 +25,7 @@ module.exports = {
       return queryInterface.dropTable('users');
     */
 
-    return queryInterface.changeColumn('Users', 'email', {
+    return queryInterface.changeColumn('users', 'email', {
       type: Sequelize.STRING,
       unique: false,
     });
