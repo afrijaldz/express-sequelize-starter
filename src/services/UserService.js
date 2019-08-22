@@ -1,4 +1,4 @@
-const UserModel = require('../../models').User;
+const UserModel = require('../../models').user;
 
 const saltRounds = parseInt(process.env.SALT);
 
