@@ -19,20 +19,20 @@
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.19.0",
     "dotenv": "^6.0.0",
-    "express": "^4.16.3",
+    "express": "^4.17.1",
     "hashids": "^1.2.2",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.10",
-    "mysql2": "^1.5.3",
-    "sequelize": "^4.38.0"
+    "lodash": "^4.17.15",
+    "mysql2": "^1.7.0",
+    "sequelize": "^4.44.3"
   },
   "devDependencies": {
-    "eslint": "^5.1.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
     "nodemon": "latest",
-    "sequelize-cli": "^5.4.0"
+    "sequelize-cli": "^5.5.1"
   }
 }
